@@ -12,8 +12,8 @@
 ## Table of contents
 
 - [How to install](#how-to-install)
+- [Basic Example](#basic-example)
 - [Features](#features)
-- [Example](#example)
 - [Development](#development)
   - [Code Style](#code-style)
   - [Code Docs](#code-docs)
@@ -27,13 +27,101 @@
 
 ## How to install
 
+```sh
+$ npm install css --save
+$ npm install css-ast-iterations --save
+```
+
+## Basic Example
+
+```js
+// Require the CSS Parser
+const css = require('css');
+// Require the css-ast-iterations
+require('css-ast-iterations');
+
+// Create the AST
+const stylesheet = '.foo {color: #fff;} .bar { width: 50px;}'
+const ast = css.parse(stylesheet);
+
+// Find and iterates on all Rules
+ast.findRules((rule, ruleIndex) => {
+  console.log(rule);
+});
+
+```
 
 ## Features
 
+*Find and iterates on all **Rules**:*
+```js
+ast.findRules((rule, ruleIndex) => {
+  console.log(rule);
+});
+```
 
-## Example
+*Find and iterates on all **Rules** (filter by **rule** rules):*
+```js
+ast.findRulesByType('rule', (rule, ruleIndex) => {
+  console.log(rule);
+});
+```
 
+*Find and iterates on all **Rules** (filter by **import** rules):*
+```js
+ast.findRulesByType('import', (rule, ruleIndex) => {
+  console.log(rule);
+});
+```
 
+*Find and iterates on all **Rules** (filter by **comment** rules):*
+```js
+ast.findRulesByType('comment', (rule, ruleIndex) => {
+  console.log(rule);
+});
+```
+
+*Find and iterates on all **Selectors**:*
+```js
+ast.findSelectors((selectors, selectorIndex) => {
+  console.log(selectors);
+});
+```
+
+*Find and iterates on all **imports**:*
+```js
+ast.findImport((url, importIndex) => {
+  console.log(url);
+});
+```
+
+*Find and iterates on all **Declarations**:*
+```js
+ast.findDeclarations((declaration, declarationIndex) => {
+  console.log(declaration);
+});
+```
+
+*Find and iterates on all **Declarations** (filter by **selectors**):*
+```js
+ast.findDeclarationsBySelectors('.afonso', (declaration, declarationIndex) => {
+  console.log(declaration);
+});
+```
+
+*Find and iterates on all **Declarations** (filter by **property**):*
+```js
+ast.findDeclarationsByProperty('bnn-size', (declaration, declarationIndex) => {
+  console.log(declaration);
+});
+```
+
+*Find and iterates on all **Declarations** (filter by **value**):*
+```js
+ast.findDeclarationsByValue('500px', (declaration, declarationIndex) => {
+  console.log(declaration);
+});
+```
 
 <hr>
 
