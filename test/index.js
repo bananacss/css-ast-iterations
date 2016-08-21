@@ -1,0 +1,1 @@
+require('./findAllRules.test.js');

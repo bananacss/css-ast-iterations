@@ -13,10 +13,13 @@
 
 - [How to install](#how-to-install)
 - [Basic Example](#basic-example)
-- [Features](#features)
+- [CSS AST reference](#css-ast-reference)
+- [Methods list](#methods-list)
+  - [Stylesheet Level - root](#stylesheet-level-root)
+  - [Rule Level](#rule-level)
+  - [Declarations Level](#declarations-level)
 - [Development](#development)
   - [Code Style](#code-style)
-  - [Code Docs](#code-docs)
   - [Tests](#tests)
 - [Versioning](#versioning)
 - [Contributing](#contributing)
@@ -35,91 +38,201 @@ $ npm install css-ast-iterations --save
 ## Basic Example
 
 ```js
-// Require the CSS Parser
 const css = require('css');
-// Require the css-ast-iterations
-require('css-ast-iterations');
+const addIterations = require('css-ast-iterations');
 
 // Create the AST
-const stylesheet = '.foo {color: #fff;} .bar { width: 50px;}'
-const ast = css.parse(stylesheet);
+const stylesheet = css.parse('.foo {color: #fff;} .bar { width: 50px;}');
 
-// Find and iterates on all Rules
-ast.findRules((rule, ruleIndex) => {
-  console.log(rule);
-});
+// Add all methods for iterations
+addIterations(stylesheet);
 
-```
-
-## Features
-
-*Find and iterates on all **Rules**:*
-```js
-ast.findRules((rule, ruleIndex) => {
+// Use a findRules method for find and iterates on all Rules
+stylesheet.findRules((rule, ruleIndex) => {
   console.log(rule);
 });
 ```
+## CSS AST reference
 
-*Find and iterates on all **Rules** (filter by **rule** rules):*
-```js
-ast.findRulesByType('rule', (rule, ruleIndex) => {
-  console.log(rule);
-});
-```
+View the [CSS AST Explorer](http://iamdustan.com/reworkcss_ast_explorer/).
 
-*Find and iterates on all **Rules** (filter by **import** rules):*
+![CSS AST reference](ast.png)
+
+## Methods list
+
+### Stylesheet Level - root
+
+*Find and iterates on all Rules:*
 ```js
-ast.findRulesByType('import', (rule, ruleIndex) => {
+stylesheet.findAllRules((rule, ruleIndex) => {
   console.log(rule);
 });
 ```
 
-*Find and iterates on all **Rules** (filter by **comment** rules):*
+*Find and iterates on all Rules (filter by rule rules):*
 ```js
-ast.findRulesByType('comment', (rule, ruleIndex) => {
+stylesheet.findAllRulesByType('rule', (rule, ruleIndex) => {
   console.log(rule);
 });
 ```
 
-*Find and iterates on all **Selectors**:*
+*Find and iterates on all Rules (filter by import rules):*
 ```js
-ast.findSelectors((selectors, selectorIndex) => {
+stylesheet.findAllRulesByType('import', (rule, ruleIndex) => {
+  console.log(rule);
+});
+```
+
+*Find and iterates on all Rules (filter by comment rules):*
+```js
+stylesheet.findAllRulesByType('comment', (rule, ruleIndex) => {
+  console.log(rule);
+});
+```
+
+*Find and iterates on all Selectors:*
+```js
+stylesheet.findAllSelectors((selectors, selectorIndex) => {
   console.log(selectors);
 });
 ```
 
-*Find and iterates on all **imports**:*
+*Find and iterates on all imports:*
 ```js
-ast.findImport((url, importIndex) => {
+stylesheet.findAllImport((url, importIndex) => {
   console.log(url);
 });
 ```
 
-*Find and iterates on all **Declarations**:*
+*Find and iterates on all Declarations:*
 ```js
-ast.findDeclarations((declaration, declarationIndex) => {
+stylesheet.findAllDeclarations((declaration, declarationIndex) => {
   console.log(declaration);
 });
 ```
 
-*Find and iterates on all **Declarations** (filter by **selectors**):*
+*Find and iterates on all Declarations (filter by selectors):*
 ```js
-ast.findDeclarationsBySelectors('.afonso', (declaration, declarationIndex) => {
+stylesheet.findAllDeclarationsBySelectors('.foo', (declaration, declarationIndex) => {
   console.log(declaration);
 });
 ```
 
-*Find and iterates on all **Declarations** (filter by **property**):*
+*Find and iterates on all Declarations (filter by property):*
 ```js
-ast.findDeclarationsByProperty('bnn-size', (declaration, declarationIndex) => {
+stylesheet.findAllDeclarationsByProperty('max-width', (declaration, declarationIndex) => {
   console.log(declaration);
 });
 ```
 
-*Find and iterates on all **Declarations** (filter by **value**):*
+*Find and iterates on all Declarations (filter by value):*
 ```js
-ast.findDeclarationsByValue('500px', (declaration, declarationIndex) => {
+stylesheet.findAllDeclarationsByValue('500px', (declaration, declarationIndex) => {
   console.log(declaration);
+});
+```
+
+### Rule Level
+
+*Find and iterates on Declarations:*
+```js
+// Stylesheet Level (root)
+stylesheet.findAllRulesByType('rule', (rule, ruleIndex) => {
+
+  // Rule Level
+  rule.findDeclarations((declaration, declarationIndex) => {
+    console.log(declaration);
+  });
+
+});
+```
+
+*Find and iterates on Declarations (filter by type):*
+```js
+// Stylesheet Level (root)
+stylesheet.findAllRulesByType('rule', (rule, ruleIndex) => {
+
+  // Rule Level
+  rule.findDeclarationsBySelectors('.foo', (declaration, declarationIndex) => {
+    console.log(declaration);
+  });
+
+});
+```
+
+*Find and iterates on Declarations (filter by property):*
+```js
+// Stylesheet Level (root)
+stylesheet.findAllRulesByType('rule', (rule, ruleIndex) => {
+
+  // Rule Level
+  rule.findDeclarationsByProperty('max-width', (declaration, declarationIndex) => {
+    console.log(declaration);
+  });
+
+});
+```
+
+*Find and iterates on Declarations (filter by value):*
+```js
+// Stylesheet Level (root)
+stylesheet.findAllRulesByType('rule', (rule, ruleIndex) => {
+
+  // Rule Level
+  rule.findDeclarationsByValue('500px', (declaration, declarationIndex) => {
+    console.log(declaration);
+  });
+
+});
+```
+
+### Declarations Level
+
+*Add a new declaration:*
+```js
+// Stylesheet Level (root)
+stylesheet.findAllRulesByType('rule', (rule, ruleIndex) => {
+
+  // Rule Level
+  rule.findDeclarationsByProperty('max-width', (declaration, declarationIndex) => {
+
+    // Declarations Level
+    rule.addDeclaration('width', '50px', declarationIndex);
+
+  });
+
+});
+```
+
+*Remove a declaration:*
+```js
+// Stylesheet Level (root)
+stylesheet.findAllRulesByType('rule', (rule, ruleIndex) => {
+
+  // Rule Level
+  rule.findDeclarationsByProperty('max-width', (declaration, declarationIndex) => {
+
+    // Declarations Level
+    rule.removeDeclaration(declarationIndex);
+
+  });
+
+});
+```
+
+*Get a specific param from a value:*
+```js
+// Stylesheet Level (root)
+stylesheet.findAllRulesByType('rule', (rule, ruleIndex) => {
+
+  // Rule Level
+  rule.findDeclarationsByProperty('max-width', (declaration, declarationIndex) => {
+
+    // Declarations Level
+    declaration.value.getParam(0); // position of param
+
+  });
+
 });
 ```
 
@@ -135,15 +248,6 @@ Follow the [NodeJS code style guide](https://github.com/bananacss/banana-style-g
 ```sh
 $ npm run eslint
 ```
-
-### Code Docs
-
-*Generate code docs with [JSDocs](http://usejsdoc.org/)*
-```sh
-$ npm run jsdocs
-```
-
-View code docs in `out/index.html`
 
 ### Tests
 

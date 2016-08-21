@@ -29,14 +29,12 @@
     "test": "mocha test/index.js",
     "cover": "istanbul cover _mocha -- ./test/* --recursive",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
-    "eslint": "eslint src/* src/core/* src/helpers/* bin/* test/*",
-    "jsdocs": "jsdoc bin/*.js src/*.js src/core/*.js src/helpers/*.js"
+    "eslint": "eslint src/* src/core/* test/*"
   },
   "devDependencies": {
     "coveralls": "^2.11.12",
     "eslint": "^3.2.2",
     "istanbul": "^0.4.4",
-    "jsdoc": "^3.4.0",
     "mocha": "^3.0.0",
     "mocha-lcov-reporter": "^1.2.0"
   }
