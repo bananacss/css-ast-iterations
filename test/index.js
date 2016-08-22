@@ -9,5 +9,9 @@ require('./findAllDeclarationsByProperty.test.js');
 require('./findAllDeclarationsByValue.test.js');
 
 // Rule Level
+require('./findDeclarations.test.js');
+require('./findDeclarationsBySelectors.test.js');
+require('./findDeclarationsByProperty.test.js');
+require('./findDeclarationsByValue.test.js');
 
 // Declarations Level

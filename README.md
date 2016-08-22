@@ -151,7 +151,7 @@ stylesheet.findAllRulesByType('rule', (rule, ruleIndex) => {
 });
 ```
 
-*Find and iterates on Declarations (filter by type):*
+*Find and iterates on Declarations (filter by selectors):*
 ```js
 // Stylesheet Level (root)
 stylesheet.findAllRulesByType('rule', (rule, ruleIndex) => {
