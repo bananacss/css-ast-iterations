@@ -17,7 +17,8 @@ const findDeclarationsByProperty = require('./core/findDeclarationsByProperty');
 const findDeclarationsByValue = require('./core/findDeclarationsByValue');
 
 // Declarations Level
-
+const addDeclaration = require('./core/addDeclaration');
+const removeDeclaration = require('./core/removeDeclaration');
 
 const addIterations = (astRoot) => {
 
@@ -38,6 +39,8 @@ const addIterations = (astRoot) => {
   findDeclarationsByValue(astRoot);
 
   // Declarations Level
+  addDeclaration(astRoot);
+  removeDeclaration(astRoot);
 
 };
 
