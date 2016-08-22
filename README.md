@@ -233,7 +233,7 @@ stylesheet.findAllRulesByType('rule', (rule, ruleIndex) => {
   rule.findDeclarationsByProperty('max-width', (declaration, declarationIndex) => {
 
     // Declarations Level
-    declaration.value.getParam(0); // position of param
+    declaration.getParam(0); // position of param
 
   });
 

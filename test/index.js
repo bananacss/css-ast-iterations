@@ -17,3 +17,4 @@ require('./findDeclarationsByValue.test.js');
 // Declarations Level
 require('./addDeclaration.test.js');
 require('./removeDeclaration.test.js');
+require('./getParam.test.js');

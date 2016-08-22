@@ -19,6 +19,7 @@ const findDeclarationsByValue = require('./core/findDeclarationsByValue');
 // Declarations Level
 const addDeclaration = require('./core/addDeclaration');
 const removeDeclaration = require('./core/removeDeclaration');
+const getParam = require('./core/getParam');
 
 const addIterations = (astRoot) => {
 
@@ -41,7 +42,7 @@ const addIterations = (astRoot) => {
   // Declarations Level
   addDeclaration(astRoot);
   removeDeclaration(astRoot);
-
+  getParam(astRoot);
 };
 
 module.exports = addIterations;
