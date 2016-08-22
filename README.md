@@ -6,8 +6,8 @@
 [![Coverage Status](https://coveralls.io/repos/github/afonsopacifer/css-ast-iterations/badge.svg?branch=master)](https://coveralls.io/github/afonsopacifer/css-ast-iterations?branch=master)
 [![Dependency Status](https://david-dm.org/afonsopacifer/css-ast-iterations.svg)](https://david-dm.org/afonsopacifer/css-ast-iterations)
 [![devDependency Status](https://david-dm.org/afonsopacifer/css-ast-iterations/dev-status.svg)](https://david-dm.org/afonsopacifer/css-ast-iterations#info=devDependencies)
-[![npm](https://img.shields.io/npm/vcss-ast-iterations.svg)](https://www.npmjs.com/package/css-ast-iterations)
-[![npm](https://img.shields.io/npm/dtcss-ast-iterations.svg)](https://www.npmjs.com/package/css-ast-iterations)
+[![npm](https://img.shields.io/npm/v/css-ast-iterations.svg)](https://www.npmjs.com/package/css-ast-iterations)
+[![npm](https://img.shields.io/npm/dt/css-ast-iterations.svg)](https://www.npmjs.com/package/css-ast-iterations)
 
 ## Table of contents
 
