@@ -8,7 +8,14 @@ describe('findAllRules()', () => {
 
   it('Should return a iterations in a list of rules', () => {
 
-    const ast = css.parse('.a{width: 10px;}b.{color:#000;}');
+    const ast = css.parse(`
+      .a {
+        width: 10px;
+      }
+      .b {
+        color: #000;
+      }
+    `);
 
     // Add findAllRules method on Object
     findAllRules(ast);
@@ -19,7 +26,7 @@ describe('findAllRules()', () => {
       result.push([indexRule, rule.type]);
     });
 
-    const expect = [ [ 0, 'rule' ], [ 1, 'rule' ] ];
+    const expect = [[0, 'rule'], [1, 'rule']].toString();
 
     assert.equal(result, expect);
 

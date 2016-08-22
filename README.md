@@ -99,36 +99,40 @@ stylesheet.findAllSelectors((selectors, selectorIndex) => {
 
 *Find and iterates on all imports:*
 ```js
-stylesheet.findAllImport((url, importIndex) => {
+stylesheet.findAllImport((url) => {
   console.log(url);
 });
 ```
 
 *Find and iterates on all Declarations:*
 ```js
-stylesheet.findAllDeclarations((declaration, declarationIndex) => {
-  console.log(declaration);
+stylesheet.findAllDeclarations((declaration) => {
+    console.log(declaration.property);
+    console.log(declaration.value);
 });
 ```
 
 *Find and iterates on all Declarations (filter by selectors):*
 ```js
-stylesheet.findAllDeclarationsBySelectors('.foo', (declaration, declarationIndex) => {
-  console.log(declaration);
+stylesheet.findAllDeclarationsBySelectors('.foo', (declaration) => {
+    console.log(declaration.property);
+    console.log(declaration.value);
 });
 ```
 
 *Find and iterates on all Declarations (filter by property):*
 ```js
-stylesheet.findAllDeclarationsByProperty('max-width', (declaration, declarationIndex) => {
-  console.log(declaration);
+stylesheet.findAllDeclarationsByProperty('max-width', (declaration) => {
+    console.log(declaration.property);
+    console.log(declaration.value);
 });
 ```
 
 *Find and iterates on all Declarations (filter by value):*
 ```js
-stylesheet.findAllDeclarationsByValue('500px', (declaration, declarationIndex) => {
-  console.log(declaration);
+stylesheet.findAllDeclarationsByValue('500px', (declaration) => {
+    console.log(declaration.property);
+    console.log(declaration.value);
 });
 ```
 
