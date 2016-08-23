@@ -8,7 +8,7 @@ const removeDeclaration = (astRoot) => {
 
     rules.forEach((rule) => {
       if (rule.type === 'rule') {
-        rule.declarations.forEach((declaration) => {
+        rule.declarations.forEach(() => {
 
           rule.removeDeclaration = function(index) {
 

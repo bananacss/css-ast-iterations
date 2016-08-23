@@ -32,7 +32,7 @@ describe('addDeclaration()', () => {
 
     ast.findAllRulesByType('rule', (rule) => {
 
-      rule.findDeclarationsByProperty('width', (declaration) => {
+      rule.findDeclarationsByProperty('width', () => {
 
         rule.addDeclaration('background', '#fff', 0);
 

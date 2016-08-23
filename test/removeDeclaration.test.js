@@ -33,7 +33,7 @@ describe('removeDeclaration()', () => {
 
     ast.findAllRulesByType('rule', (rule) => {
 
-      rule.findDeclarationsByProperty('width', (declaration) => {
+      rule.findDeclarationsByProperty('width', () => {
 
         rule.removeDeclaration(0);
 

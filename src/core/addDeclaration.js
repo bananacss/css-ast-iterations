@@ -8,7 +8,7 @@ const addDeclaration = (astRoot) => {
 
     rules.forEach((rule) => {
       if (rule.type === 'rule') {
-        rule.declarations.forEach((declaration) => {
+        rule.declarations.forEach(() => {
 
           rule.addDeclaration = function(property, value, index) {
 
