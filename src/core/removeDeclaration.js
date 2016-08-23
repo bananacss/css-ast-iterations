@@ -10,7 +10,7 @@ const removeDeclaration = (astRoot) => {
       if (rule.type === 'rule') {
         rule.declarations.forEach((declaration) => {
 
-          declaration.removeDeclaration = function(index) {
+          rule.removeDeclaration = function(index) {
 
             rule.declarations.splice(index, 1);
 

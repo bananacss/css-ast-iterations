@@ -35,7 +35,7 @@ describe('removeDeclaration()', () => {
 
       rule.findDeclarationsByProperty('width', (declaration) => {
 
-        declaration.removeDeclaration(0);
+        rule.removeDeclaration(0);
 
       });
 

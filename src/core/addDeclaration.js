@@ -10,7 +10,7 @@ const addDeclaration = (astRoot) => {
       if (rule.type === 'rule') {
         rule.declarations.forEach((declaration) => {
 
-          declaration.addDeclaration = function(property, value, index) {
+          rule.addDeclaration = function(property, value, index) {
 
             rule.declarations.splice(index, 0, {
               type: 'declaration',

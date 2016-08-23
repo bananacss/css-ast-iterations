@@ -34,7 +34,7 @@ describe('addDeclaration()', () => {
 
       rule.findDeclarationsByProperty('width', (declaration) => {
 
-        declaration.addDeclaration('background', '#fff', 0);
+        rule.addDeclaration('background', '#fff', 0);
 
       });
 
