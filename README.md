@@ -97,6 +97,11 @@ stylesheet.findAllRulesBySelectors('.foo', (rule, ruleIndex) => {
 });
 ```
 
+*Remove a single rule:*
+```js
+stylesheet.removeRule(0); //Rule position
+```
+
 *Find and iterates on all Selectors:*
 ```js
 stylesheet.findAllSelectors((selectors, selectorIndex) => {

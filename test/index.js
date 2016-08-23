@@ -2,6 +2,7 @@
 require('./findAllRules.test.js');
 require('./findAllRulesByType.test.js');
 require('./findAllRulesBySelectors.test.js');
+require('./removeRule.test.js');
 require('./findAllSelectors.test.js');
 require('./findAllImport.test.js');
 require('./findAllDeclarations.test.js');
