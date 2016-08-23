@@ -3,6 +3,7 @@
 // Stylesheet Level (root)
 const findAllRules = require('./core/findAllRules');
 const findAllRulesByType = require('./core/findAllRulesByType');
+const findAllRulesBySelectors = require('./core/findAllRulesBySelectors');
 const findAllSelectors = require('./core/findAllSelectors');
 const findAllImport = require('./core/findAllImport');
 const findAllDeclarations = require('./core/findAllDeclarations');
@@ -26,6 +27,7 @@ const addIterations = (astRoot) => {
   // Stylesheet Level (root)
   findAllRules(astRoot);
   findAllRulesByType(astRoot);
+  findAllRulesBySelectors(astRoot);
   findAllSelectors(astRoot);
   findAllImport(astRoot);
   findAllDeclarations(astRoot);
@@ -43,6 +45,7 @@ const addIterations = (astRoot) => {
   addDeclaration(astRoot);
   removeDeclaration(astRoot);
   getParam(astRoot);
+
 };
 
 module.exports = addIterations;

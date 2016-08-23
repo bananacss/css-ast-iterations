@@ -90,6 +90,13 @@ stylesheet.findAllRulesByType('comment', (rule, ruleIndex) => {
 });
 ```
 
+*Find and iterates on all Rules (filter by selectors):*
+```js
+stylesheet.findAllRulesBySelectors('.foo', (rule, ruleIndex) => {
+  console.log(rule);
+});
+```
+
 *Find and iterates on all Selectors:*
 ```js
 stylesheet.findAllSelectors((selectors, selectorIndex) => {
