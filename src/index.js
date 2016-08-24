@@ -4,6 +4,7 @@
 const findAllRules = require('./core/findAllRules');
 const findAllRulesByType = require('./core/findAllRulesByType');
 const findAllRulesBySelectors = require('./core/findAllRulesBySelectors');
+const addRule = require('./core/addRule');
 const removeRule = require('./core/removeRule');
 const findAllSelectors = require('./core/findAllSelectors');
 const findAllImport = require('./core/findAllImport');
@@ -29,6 +30,7 @@ const addIterations = (astRoot) => {
   findAllRules(astRoot);
   findAllRulesByType(astRoot);
   findAllRulesBySelectors(astRoot);
+  addRule(astRoot);
   removeRule(astRoot);
   findAllSelectors(astRoot);
   findAllImport(astRoot);

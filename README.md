@@ -16,8 +16,28 @@
 - [CSS AST reference](#css-ast-reference)
 - [Methods list](#methods-list)
   - [Stylesheet Level - root](#stylesheet-level-root)
+    - findAllRules
+    - findAllRulesByType
+    - findAllRulesByType
+    - findAllRulesByType
+    - findAllRulesBySelectors
+    - addRule
+    - removeRule
+    - findAllSelectors
+    - findAllImport
+    - findAllDeclarations
+    - findAllDeclarationsBySelectors
+    - findAllDeclarationsByProperty
+    - findAllDeclarationsByValue
   - [Rule Level](#rule-level)
+    - findDeclarations
+    - findDeclarationsBySelectors
+    - findDeclarationsByProperty
+    - findDeclarationsByValue
   - [Declarations Level](#declarations-level)
+    - addDeclaration
+    - removeDeclaration
+    - getParam
 - [Development](#development)
   - [Code Style](#code-style)
   - [Tests](#tests)
@@ -95,6 +115,11 @@ stylesheet.findAllRulesByType('comment', (rule, ruleIndex) => {
 stylesheet.findAllRulesBySelectors('.foo', (rule, ruleIndex) => {
   console.log(rule);
 });
+```
+
+*Add a single rule:*
+```js
+stylesheet.addRule(newRule, 0); //Rule position
 ```
 
 *Remove a single rule:*

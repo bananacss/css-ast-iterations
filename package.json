@@ -1,7 +1,7 @@
 {
   "name": "css-ast-iterations",
   "description": "Provide a very simple API for complex iterations on the CSS abstract syntax tree (AST).",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "author": {
     "name": "afonsopacifer",
     "email": "afonsopacifer@live.com"
