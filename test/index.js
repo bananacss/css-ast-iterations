@@ -1,5 +1,6 @@
 // Stylesheet Level (root)
 require('./findAllRules.test.js');
+require('./moonWalkAllRules.test.js');
 require('./findAllRulesByType.test.js');
 require('./findAllRulesBySelectors.test.js');
 require('./addRule.test.js');

@@ -2,6 +2,7 @@
 
 // Stylesheet Level (root)
 const findAllRules = require('./core/findAllRules');
+const moonWalkAllRules = require('./core/moonWalkAllRules');
 const findAllRulesByType = require('./core/findAllRulesByType');
 const findAllRulesBySelectors = require('./core/findAllRulesBySelectors');
 const addRule = require('./core/addRule');
@@ -28,6 +29,7 @@ const addIterations = (astRoot) => {
 
   // Stylesheet Level (root)
   findAllRules(astRoot);
+  moonWalkAllRules(astRoot);
   findAllRulesByType(astRoot);
   findAllRulesBySelectors(astRoot);
   addRule(astRoot);

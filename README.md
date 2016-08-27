@@ -17,8 +17,7 @@
 - [Methods list](#methods-list)
   - [Stylesheet Level - root](#stylesheet-level-root)
     - findAllRules
-    - findAllRulesByType
-    - findAllRulesByType
+    - moonWalkAllRules
     - findAllRulesByType
     - findAllRulesBySelectors
     - addRule
@@ -85,6 +84,13 @@ View the [CSS AST Explorer](http://iamdustan.com/reworkcss_ast_explorer/).
 *Find and iterates on all Rules:*
 ```js
 stylesheet.findAllRules((rule, ruleIndex) => {
+  console.log(rule);
+});
+```
+
+*Find and iterates on all Rules (Backwards):*
+```js
+stylesheet.moonWalkAllRules((rule, ruleIndex) => {
   console.log(rule);
 });
 ```
