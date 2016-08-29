@@ -2,10 +2,10 @@
 
 > :smile::green_heart::evergreen_tree: Provide a very simple API for complex iterations on the CSS abstract syntax tree (AST).
 
-[![Build Status](https://travis-ci.org/afonsopacifer/css-ast-iterations.svg?branch=master)](https://travis-ci.org/afonsopacifer/css-ast-iterations)
-[![Coverage Status](https://coveralls.io/repos/github/afonsopacifer/css-ast-iterations/badge.svg?branch=master)](https://coveralls.io/github/afonsopacifer/css-ast-iterations?branch=master)
-[![Dependency Status](https://david-dm.org/afonsopacifer/css-ast-iterations.svg)](https://david-dm.org/afonsopacifer/css-ast-iterations)
-[![devDependency Status](https://david-dm.org/afonsopacifer/css-ast-iterations/dev-status.svg)](https://david-dm.org/afonsopacifer/css-ast-iterations#info=devDependencies)
+[![Build Status](https://travis-ci.org/bananacss/css-ast-iterations.svg?branch=master)](https://travis-ci.org/bananacss/css-ast-iterations)
+[![Coverage Status](https://coveralls.io/repos/github/bananacss/css-ast-iterations/badge.svg?branch=master)](https://coveralls.io/github/bananacss/css-ast-iterations?branch=master)
+[![Dependency Status](https://david-dm.org/bananacss/css-ast-iterations.svg)](https://david-dm.org/bananacss/css-ast-iterations)
+[![devDependency Status](https://david-dm.org/bananacss/css-ast-iterations/dev-status.svg)](https://david-dm.org/bananacss/css-ast-iterations#info=devDependencies)
 [![npm](https://img.shields.io/npm/v/css-ast-iterations.svg)](https://www.npmjs.com/package/css-ast-iterations)
 [![npm](https://img.shields.io/npm/dt/css-ast-iterations.svg)](https://www.npmjs.com/package/css-ast-iterations)
 
@@ -316,14 +316,14 @@ To keep better organization of releases we follow the [Semantic Versioning 2.0.0
 
 ## Contributing
 
-Find on our [issues](https://github.com/afonsopacifer/css-ast-iterations/issues/) the next steps of the project ;)
+Find on our [issues](https://github.com/bananacss/css-ast-iterations/issues/) the next steps of the project ;)
 <br>
-Want to contribute? [Follow these recommendations](https://github.com/afonsopacifer/css-ast-iterations/blob/master/CONTRIBUTING.md).
+Want to contribute? [Follow these recommendations](https://github.com/bananacss/css-ast-iterations/blob/master/CONTRIBUTING.md).
 
 ## History
 
-See [Releases](https://github.com/afonsopacifer/css-ast-iterations/releases) for detailed changelog.
+See [Releases](https://github.com/bananacss/css-ast-iterations/releases) for detailed changelog.
 
 ## License
 
-[MIT License](https://github.com/afonsopacifer/css-ast-iterations/blob/master/LICENSE.md) © [Afonso Pacifer](http://afonsopacifer.com/)
+[MIT License](https://github.com/bananacss/css-ast-iterations/blob/master/LICENSE.md) © [Afonso Pacifer](http://afonsopacifer.com/)
